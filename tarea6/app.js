@@ -51,7 +51,7 @@ function frutongas() {
     });
     frutas.forEach(function callback(value, index) {
         console.log(`${index}: ${value}`);
-      }); 
+    }); 
 }
 
 frutongas();
