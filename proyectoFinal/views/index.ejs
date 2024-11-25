@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD con Node.js y MySQL</title>
+    <link rel="stylesheet" href="/estilos.css">
+</head>
+<body>
+    <h1>Lista de Usuarios</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellido paterno</th>
+            <th>Apellido materno</th>
+            <th>Edad</th>
+            <th>No. cuenta</th>
+            <th>Email</th>
+            <th>Teléfono</th>
+            <th>Carrera</th>
+            <th>Acciones</th>
+        </tr>
+        <% users.forEach(user => { %>
+        <tr>
+            <td><%= user.id %></td>
+            <td><%= user.nombre %></td>
+            <td><%= user.ap_pat %></td>
+            <td><%= user.ap_mat %></td>
+            <td><%= user.edad %></td>
+            <td><%= user.no_cuenta %></td>
+            <td><%= user.email %></td>
+            <td><%= user.telefono %></td>
+            <td><%= user.carrera %></td>
+            <td>
+                <a href="/edit/<%= user.id %>">Editar</a> |
+                <a href="/delete/<%= user.id %>">Eliminar</a>
+            </td>
+        </tr>
+        <% }); %>
+    </table>
+    
+
+    <h2>Agregar Nuevo Usuario</h2>
+    <form action="/add" method="POST">
+        <div>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+        </div>
+        <div>
+            <label for="ap_pat">Apellido Paterno:</label>
+            <input type="text" id="ap_pat" name="ap_pat" required>
+        </div>
+        <div>
+            <label for="ap_mat">Apellido Materno:</label>
+            <input type="text" id="ap_mat" name="ap_mat" required>
+        </div>
+        <div>
+            <label for="edad">Edad:</label>
+            <input type="number" id="edad" name="edad" required>
+        </div>
+        <div>
+            <label for="no_cuenta">Número de Cuenta:</label>
+            <input type="text" id="no_cuenta" name="no_cuenta" required>
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+            <label for="telefono">Teléfono:</label>
+            <input type="text" id="telefono" name="telefono" required>
+        </div>
+        <div>
+            <label for="carrera">Carrera:</label>
+            <input type="text" id="carrera" name="carrera" required>
+        </div>
+        <div>
+            <button type="submit">Agregar</button>
+        </div>
+    </form>
+    
+</body>
+</html>

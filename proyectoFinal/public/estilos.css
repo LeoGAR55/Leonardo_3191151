@@ -1,0 +1,58 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 20px;
+    background-color: #cdcfb3;
+}
+
+table { 
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td { /*bordes de toda la tabla*/
+    border: 4px solid #ff057a;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+th { /*titulos tabla*/
+    background-color: #435fff;
+}
+
+a { /* links*/
+    text-decoration: none;
+    color: #00a2ff;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+div {
+    padding: 3px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+input {
+    padding: 8px;
+    width: 50%;
+    border: 1px solid #000000;
+    border-radius: 8px;
+}
+
+button {
+    padding: 10px;
+    background-color: #4ca0af;  
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #a04551;
+}
