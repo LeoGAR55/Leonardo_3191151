@@ -99,3 +99,17 @@ app.post('/update/:id', (req, res) => {
         }
     });
 });
+
+//editar
+app.get('/edit/:id', (req, res) => {
+    const { id } = req.params;
+    const query = 'SELECT * FROM alumnos WHERE id = ?';
+    db.query(query, [id], (err, results) => {
+        if (err) {
+            console.error('Error fetching user:', err);
+            res.send('Error');
+        } else {
+            res.render('edit', { usuarios: results[0] });
+        }
+    });
+});
